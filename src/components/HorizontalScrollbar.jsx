@@ -13,8 +13,8 @@ const LeftArrow = () => {
     const { scrollPrev } = useContext(VisibilityContext);
   
     return (
-      <Typography onClick={() => scrollPrev()} className="right-arrow">
-        <img src={LeftArrowIcon} alt="right-arrow" />
+      <Typography onClick={() => scrollPrev()} style={{ cursor: 'pointer' }}>
+        <img src={LeftArrowIcon} alt="left-arrow" />
       </Typography>
     );
   };
@@ -23,28 +23,33 @@ const LeftArrow = () => {
     const { scrollNext } = useContext(VisibilityContext);
   
     return (
-      <Typography onClick={() => scrollNext()} className="left-arrow">
+      <Typography onClick={() => scrollNext()} style={{ cursor: 'pointer' }}>
         <img src={RightArrowIcon} alt="right-arrow" />
       </Typography>
     );
   };
-  
 
 
+  const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }) => (
 
-  const HorizontalScrollbar = ({ data, bodyParts, setBodyPart, bodyPart }) => (
-    <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+<Box sx={{ width: 1500, overflowX: 'auto' }}>
+<ScrollMenu scrollWheel={true} LeftArrow={LeftArrow} RightArrow={RightArrow}>
       {data.map((item) => (
         <Box
           key={item.id || item}
-          itemId={item.id || item}
+          itemID={item.id || item}
           title={item.id || item}
           m="0 40px"
         >
            <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} />  
         </Box>
-      ))}
+      )
+    )}
+    
     </ScrollMenu>
+    </Box>
+    
+
   );
 
 export default HorizontalScrollbar
