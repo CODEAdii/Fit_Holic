@@ -32,7 +32,7 @@ const LeftArrow = () => {
   };
 
 
-  const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }) => (
+  const HorizontalScrollbar = ({ data, setBodyPart, bodyPart, isBodyParts }) => (
 
 <Box sx={{ width: 1500, overflowX: 'auto' }}>
 <ScrollMenu scrollWheel={true} LeftArrow={LeftArrow} RightArrow={RightArrow}>
@@ -43,7 +43,7 @@ const LeftArrow = () => {
           title={item.id || item}
           m="0 40px"
         >
-           <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} /> 
+           { isBodyParts ? <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} /> :<ExerciseCard exercise={item}/>} 
         </Box>
       )
     )}
