@@ -1,5 +1,11 @@
 # React + Vite
 
+
+
+<div style="display: flex; justify-content: center;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="150" style="margin-right: 20px;">
+  <img src="https://vitejs.dev/logo.svg" alt="Vite Logo" width="150">
+</div>
 This project is a React application built using Vite, incorporating various libraries and tools to enhance development and functionality.
 
 ## Features
