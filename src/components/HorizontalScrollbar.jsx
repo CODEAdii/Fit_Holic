@@ -16,7 +16,7 @@ const LeftArrow = () => {
   
     return (
       <Typography onClick={() => scrollPrev()} style={{ cursor: 'pointer' }}>
-        <img src={LeftArrowIcon} alt="left-arrow" />
+        <img src={LeftArrowIcon} alt="right-arrow" />
       </Typography>
     );
   };
@@ -35,7 +35,7 @@ const LeftArrow = () => {
   const HorizontalScrollbar = ({ data, setBodyPart, bodyPart, isBodyParts }) => (
 
 <Box sx={{ width: 1500, overflowX: 'auto' }}>
-<ScrollMenu scrollWheel={true} LeftArrow={LeftArrow} RightArrow={RightArrow}>
+<ScrollMenu scrollWheel={true} LeftArrow={RightArrow} RightArrow={LeftArrow}>
       {data.map((item) => (
         <Box
           key={item.id || item}
